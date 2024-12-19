@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAIA BULJETA - Cosmic Design Maestro</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --bg-gradient: linear-gradient(135deg, #000000, #1a1a2e, #16213e, #0f3460);
+            --text-gradient: linear-gradient(90deg, #00ffff, #ff00ff);
+            --accent-color: #ff00ff;
+            --shine-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg-gradient);
+            background-size: 400% 400%;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            perspective: 1000px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 40px;
+            background: linear-gradient(45deg, #222, #000);
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate3d 15s ease-in-out infinite;
+        }
+
+        @keyframes rotate3d {
+            0%, 100% { transform: rotate3d(0, 1, 0, 0deg); }
+            50% { transform: rotate3d(0, 1, 0, 5deg); }
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #00ffff);
+            z-index: -1;
+            filter: blur(10px);
+            border-radius: 22px;
+        }
+
+        h1, h2 {
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            background: var(--text-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h1 { font-size: 3em; }
+        h2 { font-size: 2em; }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0) 40%,
+                rgba(255, 255, 255, 0.4) 50%,
+                rgba(255, 255, 255, 0) 60%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-50%) rotate(45deg); }
+            100% { transform: translateX(50%) rotate(45deg); }
+        }
+
+        ul {
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        ul li::before {
+            content: "▹";
+            color: var(--accent-color);
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        a {
+            color: #00ffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.5em; }
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: url('https://img.freepik.com/free-photo/neon-rocket-star-doodle-pattern-background_53876-97232.jpg?t=st=1722916228~exp=1722919828~hmac=591f753f35bff3058ca1c1397cb8a17f6a5572a3dbec2725adc4a9bf554bd361&w=1480') no-repeat center center;
+            background-size: cover;
+            opacity: 0.3;
+            animation: backgroundSlide 60s linear infinite;
+        }
+
+        @keyframes backgroundSlide {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+
+        .starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: transparent;
+            animation: starTwinkle 2s infinite;
+        }
+
+        .starfield::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('') repeat;
+            animation: starMove 30s linear infinite;
+        }
+
+        @keyframes starTwinkle {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes starMove {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100%); }
+        }
+    </style>
+<script defer data-domain="maiahasacoverletter.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script></head>
+<body>
+    <div class="background-animation"></div>
+    <div class="starfield"></div>
+    <div class="container">
+        <h1>MAIA BULJETA</h1>
+        
+        <div class="section">
+            <h2>Cosmic Contact</h2>
+            <p>Email: <a href="mailto:maiabuljeta@gmail.com">maiabuljeta@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/maia-buljeta-fuchs-833b42131" target="_blank">Stellar Profile</a></p>
+            <p>Work Sample: <a href="https://drive.google.com/file/d/1tGkvyMqcBXuqRRE5wYvF0IR4tfKli1ea/view?usp=sharing" target="_blank">Film Pitch Deck for Client (July 2024)</a></p>
+        </div>
+
+        <div class="section">
+            <h2>Stellar Summary</h2>
+            <p>Visionary film director and graphic designer with a cosmic track record in creating mind-bending visual content across multiple dimensions of media. Master of managing parallel universe projects from concept to completion, with unparalleled skills in brand elevation, typographic sorcery, and design alchemy.</p>
+        </div>
+
+        <div class="section">
+            <h2>Interstellar Experience</h2>
+            <ul>
+                <li>Graphic Designer, Design X Health (2022 - Present)</li>
+                <li>Filmmaker/Graphic Designer - Founder and CEO, Hypothius Picturehouse Films (2011 - Present)</li>
+                <li>2025 SFFILM Festival Shorts Screener (current)</li>
+                <li>SFFILM Festival Study Guide Creator (2022-24)</li>
+                <li>$10,000 Graphic Design Award Winner, Wunderman Thompson (2022)</li>
+                <li>Media Arts Educator - Jacob Burns Film Center Media Arts Lab (2015-19)</li>
+                <li>Graphic Designer for high-profile clients including Hellmann's Mayo, Formula E, Degree Deoderant, a superbowl commercial by Boehringer Ingelheim, etc. (2022)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Cosmic Cost Considerations</h2>
+            <p>Embark on a visual journey through the cosmos with my expertly crafted designs:</p>
+            <ul>
+                <li>Hourly Rate: $100 per Earth hour</li>
+                <li>Project-based quotes available for intergalactic endeavors</li>
+                <li>Time-space continuum bending fees may apply for rush jobs</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Letter of Interstellar Interest</h2>
+            <p>Greetings, Cosmic Employers!</p>
+            <p>I am Maia Buljeta, a multidimensional creator traversing the realms of film direction and graphic design. With a portfolio that spans across 20+ independent short films, a feature film, and collaborations with entities like UNICEF and Wunderman Thompson, I bring a unique blend of creativity and technical prowess to every project.</p>
+            <p>My journey through the creative universe includes mastery of the Adobe Creative Suite, experience in crafting visual narratives that resonate across galaxies, and the ability to lead diverse teams to produce stellar results.</p>
+            <p>I am eager to bring my cosmic creativity and interdimensional problem-solving skills to your team. Let's create visual wonders that will echo through the ages!</p>
+            <p>May our paths align in this vast creative cosmos,</p>
+            <p>Maia Buljeta</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const container = document.querySelector('.container');
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 50;
+            const rotateY = (centerX - x) / 50;
+            
+            container.style.transform = `rotate3d(1, 0, 0, ${rotateX}deg) rotate3d(0, 1, 0, ${rotateY}deg)`;
+        });
+    </script>
+
+</body>
+</html>
